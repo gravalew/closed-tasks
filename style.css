@@ -1,0 +1,171 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+/*-webkit-overflow-scrolling: touch;*/
+/*animation-play-state: paused !important;*/
+/*================================================================================*/
+
+.template-add-number {
+  margin: 5px;
+  border: 4px double #000;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+.template-add-number div {
+  margin-left: 1%;
+}
+.template-add-number div:first-child {
+  margin-left: 0;
+}
+.template-add-number__textarea {
+  flex: 1 1 200px;
+}
+
+.template-add-number-ready {
+  border: 2px solid #aaaaaa;
+  background: #efefef;
+  width: 100%;
+}
+
+.tamplate-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+.template-input,
+#RMuid {
+  padding: 12px 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid #aaaaaa;
+  border-radius: 4px;
+}
+.template-number {
+}
+.template-ready {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 25%;
+  word-wrap: break-word;
+  background: #efefef;
+}
+.template-ready p {
+  margin-bottom: 10px;
+}
+.template-ready p:last-child {
+  margin-bottom: 0;
+}
+.template-ready-panel-id {
+}
+.template-ready-number {
+}
+.template-ready-defaultuser {
+}
+.template-ready-fromuser {
+}
+.template-ready-secret {
+}
+.template-ready-host {
+}
+.template-ready-fromdomain {
+}
+.template-reg-login {
+}
+.template-reg-secret {
+}
+.template-reg-domain {
+}
+.template-reg-number {
+}
+.template-add-number-ready {
+}
+#getFromInput {
+  padding: 12px 20px;
+  background: #fff;
+  width: 100%;
+  border: 1px solid #aaaaaa;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+#getFromInput:hover {
+  background: #eee;
+  transition: all 1s ease 0s;
+}
+#getFromInput:active {
+  background: #999;
+  color: #fff;
+  transition: all 1s ease 0s;
+}
