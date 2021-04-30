@@ -72,82 +72,76 @@
               rows="17"
             ></textarea>
           </div>
-          <div class="tamplate-inputs">
-            <input
-              class="template-input"
-              type="text"
-              autocomplete="on"
-              maxlength="5"
-              id="template-company-id"
-              placeholder="Panel ID"
-            />
-            <input
-              class="template-input template-number"
-              type="text"
-              maxlength="15"
-              id="template-number"
-              placeholder="Номер"
-            />
-            <input
-              class="template-input"
-              type="text"
-              maxlength="15"
-              id="template-login"
-              placeholder="Логин"
-            />
-            <input
-              class="template-input"
-              type="text"
-              maxlength="16"
-              id="template-secret"
-              placeholder="Пароль"
-            />
-            <input
-              class="template-input"
-              type="text"
-              maxlength="20"
-              id="template-host"
-              autocomplete="on"
-              placeholder="Домен или IP адрес"
-            />
           </div>
-          <div class="template-ready">
-            <p>Просьба добавить для:</p>
-            <p>
-              <span
-                >https://panel.binotel.com/?module=pbxNumbersEnhanced&action=edit&companyID=</span
-              ><span class="template-ready-panel-id"></span>
-            </p>
-            <p>Номер <span class="template-ready-number">number</span></p>
-            <p>
-              <span
-                >defaultuser =
-                <span class="template-ready-defaultuser">login</span></span
-              ><br />
-              <span
-                >fromuser =
-                <span class="template-ready-fromuser">login</span></span
-              ><br />
-              <span
-                >secret =
-                <span class="template-ready-secret">secret</span></span
-              ><br />
-              <span>host = <span class="template-ready-host">host</span></span
-              ><br />
-              <span
-                >fromdomain =
-                <span class="template-ready-fromdomain">fromdomain</span></span
-              >
-            </p>
-            <p class="template-registaration">
-              register => <span class="template-reg-login">login</span>:<span
-                class="template-reg-secret"
-                >secret</span
-              >@<span class="template-reg-domain">domain</span>/<span
-                class="template-reg-number"
-                >number</span
-              >
-            </p>
+<div class="tamplate-inputs">
+<input
+class="template-input"
+type="text"
+autocomplete="on"
+maxlength="5"
+id="template-company-id"
+placeholder="Panel ID"
+/>
+<input
+class="template-input template-number"
+type="text"
+id="template-number"
+placeholder="Номер"
+/>
+<input
+class="template-input"
+type="text"
+id="template-login"
+placeholder="Логин"
+/>
+<input
+class="template-input"
+type="text"
+id="template-secret"
+placeholder="Пароль"
+/>
+<input
+class="template-input"
+type="text"
+id="template-host"
+autocomplete="on"
+placeholder="Домен или IP адрес"
+/>
+</div>
+<div class="template-ready">
+<p>Просьба добавить для:</p>
+<p>
+<span
+>https://panel.binotel.com/?module=pbxNumbersEnhanced&action=edit&companyID=</span
+><span class="template-ready-panel-id"></span>
+</p>
+<p>Номер <span class="template-ready-number">number</span></p>
+<p>
+<span
+>defaultuser =
+<span class="template-ready-defaultuser">login</span></span
+><br />
+<span
+>fromuser = <span class="template-ready-fromuser">login</span></span
+><br />
+<span>secret = <span class="template-ready-secret">secret</span></span
+><br />
+<span>host = <span class="template-ready-host">host</span></span
+><br />
+<span
+>fromdomain =
+<span class="template-ready-fromdomain">fromdomain</span></span
+>
+</p>
+<p>
+register => <span class="template-reg-login">login</span>:<span
+class="template-reg-secret"
+>secret</span
+>@<span class="template-reg-domain">domain</span>/<span
+class="template-reg-number"
+>number</span
+>
+</p>
             <p>
               <button class="template__btn btn" id="getFromInput">
                 Создать
