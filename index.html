@@ -1,1 +1,171 @@
-<!DOCTYPE html><html lang="ru">   <head>	<title>Главная</title>	<meta charset="UTF-8">	<meta name="format-detection" content="telephone=no">	<link rel="stylesheet" href="css/style.min.css">	<link rel="shortcut icon" href="favicon.ico">	<!-- <meta name="robots" content="noindex, nofollow"> -->	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->	<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>  <body>    <div class="wrapper">      <header class="header">  <div class="header__content _container">    <div class="closed-tasks">      <h1 class="closed-tasks__title">Закрытые задачи</h1>      <div class="closed-tasks__body">        <form>          <input            class="closed-tasks__input"            id="RMuid"            type="text"            size="10"            placeholder="Логин"            autocomplete="on"          />          <button            class="closed-tasks__btn btn"            id="button_today"            onclick="btclick ()"          >            Сегодня          </button>          <button            class="closed-tasks__btn btn"            id="button_yesterday"            onclick="byclick ()"          >            Вчера          </button>          <input            class="closed-tasks__input closed-tasks__data"            id="closed_date"            type="date"          />          <button class="closed-tasks__btn btn" id="go" onclick="bgoclick ()">            Го!          </button>        </form>      </div>      <div class="closed-tasks__reset">        <a class="closed-tasks__btn btn" href="#" onclick="uidreset ()"          >Сбросить логин</a        >      </div>    </div>  </div></header>      <main class="page">        <section class="template-add-number">          <h2 class="template-add-number__title">            Шаблон для добавления номеров          </h2>          <div class="template-add-number__textarea">            <textarea              name="template-add-number-ready"              class="template-add-number-ready"              cols="40"              rows="17"            ></textarea>          </div>          <div class="tamplate-inputs">            <input              class="template-input"              type="text"              autocomplete="on"              maxlength="5"              id="template-company-id"              placeholder="Panel ID"            />            <input              class="template-input template-number"              type="text"              maxlength="15"              id="template-number"              placeholder="Номер"            />            <input              class="template-input"              type="text"              maxlength="15"              id="template-login"              placeholder="Логин"            />            <input              class="template-input"              type="text"              maxlength="16"              id="template-secret"              placeholder="Пароль"            />            <input              class="template-input"              type="text"              maxlength="20"              id="template-host"              autocomplete="on"              placeholder="Домен или IP адрес"            />          </div>          <div class="template-ready">            <p>Просьба добавить для:</p>            <p>              <span                >https://panel.binotel.com/?module=pbxNumbersEnhanced&action=edit&companyID=</span              ><span class="template-ready-panel-id"></span>            </p>            <p>Номер <span class="template-ready-number">number</span></p>            <p>              <span                >defaultuser =                <span class="template-ready-defaultuser">login</span></span              ><br />              <span                >fromuser =                <span class="template-ready-fromuser">login</span></span              ><br />              <span                >secret =                <span class="template-ready-secret">secret</span></span              ><br />              <span>host = <span class="template-ready-host">host</span></span              ><br />              <span                >fromdomain =                <span class="template-ready-fromdomain">fromdomain</span></span              >            </p>            <p class="template-registaration">              register => <span class="template-reg-login">login</span>:<span                class="template-reg-secret"                >secret</span              >@<span class="template-reg-domain">domain</span>/<span                class="template-reg-number"                >number</span              >            </p>            <p>              <button class="template__btn btn" id="getFromInput">                Создать              </button>            </p>          </div>          <div class="template-add-number__textarea">            <textarea              name="template-add-number-ready"              class="template-add-number-ready"              cols="40"              rows="17"            ></textarea>          </div>        </section>      </main>      <footer class="footer">	<div class="footer__content _container">	</div></footer>    </div>    <div class="popup popup_popup">	<div class="popup__content">		<div class="popup__body">			<div class="popup__close"></div>		</div>	</div></div><div class="popup popup_massagename-message">	<div class="popup__content">		<div class="popup__body">			<div class="popup__close"></div>		</div>	</div></div><div class="popup popup_video">	<div class="popup__content">		<div class="popup__body">			<div class="popup__close popup__close_video"></div>			<div class="popup__video _video"></div>		</div>	</div></div> <!-- Swiper --><!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --><script src="js/vendors.min.js"></script><script src="js/app.min.js"></script>  </body></html>
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+  <div class="header__content _container">
+    <div class="closed-tasks">
+      <h1 class="closed-tasks__title">Закрытые задачи</h1>
+      <div class="closed-tasks__body">
+        <form>
+          <input
+            class="closed-tasks__input"
+            id="RMuid"
+            type="text"
+            size="10"
+            placeholder="Логин"
+            autocomplete="on"
+          />
+          <button
+            class="closed-tasks__btn btn"
+            id="button_today"
+            onclick="btclick ()"
+          >
+            Сегодня
+          </button>
+          <button
+            class="closed-tasks__btn btn"
+            id="button_yesterday"
+            onclick="byclick ()"
+          >
+            Вчера
+          </button>
+          <input
+            class="closed-tasks__input closed-tasks__data"
+            id="closed_date"
+            type="date"
+          />
+          <button class="closed-tasks__btn btn" id="go" onclick="bgoclick ()">
+            Го!
+          </button>
+        </form>
+      </div>
+      <div class="closed-tasks__reset">
+        <a class="closed-tasks__btn btn" href="#" onclick="uidreset ()"
+          >Сбросить логин</a
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+      <main class="page">
+        <section class="template-add-number">
+          <h2 class="template-add-number__title">
+            Шаблон для добавления номеров
+          </h2>
+          <div class="template-add-number__textarea">
+            <textarea
+              name="template-add-number-ready"
+              class="template-add-number-ready"
+              cols="40"
+              rows="17"
+            ></textarea>
+          </div>
+          <div class="tamplate-inputs">
+            <input
+              class="template-input"
+              type="text"
+              autocomplete="on"
+              maxlength="5"
+              id="template-company-id"
+              placeholder="Panel ID"
+            />
+            <input
+              class="template-input template-number"
+              type="text"
+              maxlength="15"
+              id="template-number"
+              placeholder="Номер"
+            />
+            <input
+              class="template-input"
+              type="text"
+              maxlength="15"
+              id="template-login"
+              placeholder="Логин"
+            />
+            <input
+              class="template-input"
+              type="text"
+              maxlength="16"
+              id="template-secret"
+              placeholder="Пароль"
+            />
+            <input
+              class="template-input"
+              type="text"
+              maxlength="20"
+              id="template-host"
+              autocomplete="on"
+              placeholder="Домен или IP адрес"
+            />
+          </div>
+          <div class="template-ready">
+            <p>Просьба добавить для:</p>
+            <p>
+              <span
+                >https://panel.binotel.com/?module=pbxNumbersEnhanced&action=edit&companyID=</span
+              ><span class="template-ready-panel-id"></span>
+            </p>
+            <p>Номер <span class="template-ready-number">number</span></p>
+            <p>
+              <span
+                >defaultuser =
+                <span class="template-ready-defaultuser">login</span></span
+              ><br />
+              <span
+                >fromuser =
+                <span class="template-ready-fromuser">login</span></span
+              ><br />
+              <span
+                >secret =
+                <span class="template-ready-secret">secret</span></span
+              ><br />
+              <span>host = <span class="template-ready-host">host</span></span
+              ><br />
+              <span
+                >fromdomain =
+                <span class="template-ready-fromdomain">fromdomain</span></span
+              >
+            </p>
+            <p class="template-registaration">
+              register => <span class="template-reg-login">login</span>:<span
+                class="template-reg-secret"
+                >secret</span
+              >@<span class="template-reg-domain">domain</span>/<span
+                class="template-reg-number"
+                >number</span
+              >
+            </p>
+            <p>
+              <button class="template__btn btn" id="getFromInput">
+                Создать
+              </button>
+            </p>
+          </div>
+          <div class="template-add-number__textarea">
+            <textarea
+              name="template-add-number-ready"
+              class="template-add-number-ready"
+              cols="40"
+              rows="17"
+            ></textarea>
+          </div>
+        </section>
+      </main>
+      <script src="js/script.js"></script>
+<script src="js/vendors.min.js"></script>
+<script src="js/app.min.js"></script>
+  </body>
+</html>
