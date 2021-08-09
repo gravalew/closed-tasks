@@ -1,1 +1,298 @@
-<!DOCTYPE html><html lang="ru">   <head>	<title>Главная</title>	<meta charset="UTF-8">	<meta name="format-detection" content="telephone=no">	<link rel="stylesheet" href="css/style.min.css">	<link rel="shortcut icon" href="favicon.ico">	<!-- <meta name="robots" content="noindex, nofollow"> -->	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->	<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>  <body>    <div class="wrapper">      <header class="header">  <div class="header__content _container">    <form class="header__form">      <h1 class="header__title">Закрытые задачи</h1>      <nav class="header__menu">        <ul class="header__list">          <li>            <input              class="header__link"              id="RMuid"              type="text"              size="10"              autocomplete="on"            />          </li>          <li>            <a class="header__link" id="go" onclick="bgoclick ()">Го!</a>          </li>          <li><input class="header__link" id="closed_date" type="date" /></li>          <li>            <a class="header__link" onclick="uidreset ()">Сбросить логин</a>          </li>          <li>            <a class="header__link">Личные</a>            <ul class="header__sub-list">              <li>                <a                  class="header__sub-link"                  id="button_today"                  onclick="btclick ()"                  target="_blank"                  >Сегодня</a                >              </li>              <li>                <a                  class="header__sub-link"                  id="button_yesterday"                  onclick="byclick ()"                  target="_blank"                  >Вчера</a                >              </li>              <li>                <a                  class="header__sub-link"                  id="button_3"                  onclick="bzclick ()"                  target="_blank"                  >Все</a                >              </li>            </ul>          </li>          <li>            <a class="header__link">По фильтрам</a>            <ul class="header__sub-list">              <li>                <a                  class="header__sub-link"                  id="button_2"                  onclick="bqclick ()"                  target="_blank"                  >Тикеты</a                >              </li>              <li>                <a                  class="header__sub-link"                  id="button_4"                  onclick="bqclick ()"                  target="_blank"                  >Аварии</a                >              </li>              <li>                <a                  class="header__sub-link"                  id="button_5"                  onclick="bqclick ()"                  target="_blank"                  >Интеграции</a                >              </li>              <li>                <a                  class="header__sub-link"                  id="button_6"                  onclick="bqclick ()"                  target="_blank"                  >Сегодня (ТЗ)</a                >              </li>              <li>                <a                  class="header__sub-link"                  id="button_7"                  onclick="bqclick ()"                  target="_blank"                  >Удалёнка</a                >              </li>              <li>                <a                  class="header__sub-link"                  id="button_8"                  onclick="bqclick ()"                  target="_blank"                  >Медиасистем</a                >              </li>            </ul>          </li>        </ul>      </nav>    </form>  </div></header>      <main class="page">        <div class="main-content _container">          <article class="template">            <section class="template__number number-template">              <div class="number-template__draft">                <textarea class="number-template__draft-area" type="text"></textarea>              </div>              <div class="number-template__group-input">					<div class="number-template__type template-type-select">						<select							 id="customer_select"							 name="customer_select"							 onchange="templateTypeSelect(this)"						  >							 <option>universal</option>							 <option>sip-tele2</option>							 <option>sip-ukrtel</option>							 <option>sip-intertelecom</option>							 <option>trunk-tele2</option>							 <option>trunk</option>							 <option>universal-lite</option>						  </select>					</div>                <input                  class="template__input"                  type="number"                  maxlength="5"						pattern="[0-9]{1,5}"                  placeholder="Panel ID"                  id="template-company-id"                />                <input                  class="template__input"                  type="number"                  maxlength="15"                  placeholder="number"                  id="template-number"                />                <input                  class="template__input hide"                  type="text"                  placeholder="login"                  id="template-login"                />                <input                  class="template__input "                  type="text"                  placeholder="defaultuser"                  id="template-defaultuser"                />                <input                  class="template__input "                  type="text"                  placeholder="fromuser"                  id="template-fromuser"                />                <input                  class="template__input "                  type="text"                  placeholder="secret"                  id="template-secret"                />                <input                  class="template__input "                  type="text"                  placeholder="host"                  id="template-host"                />                <input                  class="template__input "                  type="text"                  placeholder="fromdomain"                  id="template-fromdomain"                />              </div>              <div class="number-template-ready">                <h3 class="number-template__title" >Просьба добавить для:</h3>                <p>                  <span                    >https://panel.binotel.com/?module=pbxNumbersEnhanced&amp;action=edit&amp;companyID=</span                  ><span class="template-panel-id"></span>                </p>					 <br>                <p class="template-ready__body template-ready-body">						<p>Номер <span class="template-ready-body__number">0XXXXXXXXX</span></p>						<br>                  <span                    >defaultuser =                    <span class="template-ready-body__defaultuser">binoman</span></span                  ><br />                  <span                    >fromuser =                    <span class="template-ready-body__fromuser">binoman</span></span                  ><br />                  <span                    >secret = <span class="template-ready-body__secret">secret</span></span                  ><br />                  <span>host = <span class="template-ready-body__host">host</span></span                  ><br />                  <span                    >fromdomain =                    <span class="template-ready-body__fromdomain">fromdomain</span></span                  ><br />						<span class="template-ready-body__outboundproxy-line hide"                    >outboundproxy  =                    <span class="template-ready-body__outboundproxy">195.5.0.164</span></span                  >                </p>                <p class="template-ready__reg template-ready-reg">                  register =&gt;                  <span class="template-ready-reg__login">login</span>:<span                    class="template-ready-reg__secret"                    >secret</span                  >@<span class="template-ready-reg__domain">domain</span>/<span                    class="template-ready-reg__number"                    >number</span                  >                </p>                <input class="btn" type="button" value="SAVE" id="getFromInput" />              </div>              <div class="number-template__result"></div>				  <div class="number-template__draft">					<textarea class="number-template__draft-area" type="text"></textarea>				 </div>            </section>          </article>        </div>      </main>      <footer class="footer">	<div class="footer__content _container">	</div></footer>    </div>    <div class="popup popup_popup">	<div class="popup__content">		<div class="popup__body">			<div class="popup__close"></div>		</div>	</div></div><div class="popup popup_massagename-message">	<div class="popup__content">		<div class="popup__body">			<div class="popup__close"></div>		</div>	</div></div><div class="popup popup_video">	<div class="popup__content">		<div class="popup__body">			<div class="popup__close popup__close_video"></div>			<div class="popup__video _video"></div>		</div>	</div></div> <!-- Swiper --><!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --><script src="js/vendors.min.js"></script><script src="js/app.min.js"></script>  </body></html>
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+  <div class="header__content _container">
+    <form class="header__form">
+      <h1 class="header__title">Закрытые задачи</h1>
+      <nav class="header__menu">
+        <ul class="header__list">
+          <li>
+            <input
+              class="header__link"
+              id="RMuid"
+              type="text"
+              size="10"
+              autocomplete="on"
+            />
+          </li>
+          <li>
+            <a class="header__link" id="go" onclick="bgoclick ()">Го!</a>
+          </li>
+          <li><input class="header__link" id="closed_date" type="date" /></li>
+          <li>
+            <a class="header__link" onclick="uidreset ()">Сбросить логин</a>
+          </li>
+          <li>
+            <a class="header__link">Личные</a>
+            <ul class="header__sub-list">
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_today"
+                  onclick="btclick ()"
+                  target="_blank"
+                  >Сегодня</a
+                >
+              </li>
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_yesterday"
+                  onclick="byclick ()"
+                  target="_blank"
+                  >Вчера</a
+                >
+              </li>
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_3"
+                  onclick="bzclick ()"
+                  target="_blank"
+                  >Все</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="header__link">По фильтрам</a>
+            <ul class="header__sub-list">
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_2"
+                  onclick="bqclick ()"
+                  target="_blank"
+                  >Тикеты</a
+                >
+              </li>
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_4"
+                  onclick="bqclick ()"
+                  target="_blank"
+                  >Аварии</a
+                >
+              </li>
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_5"
+                  onclick="bqclick ()"
+                  target="_blank"
+                  >Интеграции</a
+                >
+              </li>
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_6"
+                  onclick="bqclick ()"
+                  target="_blank"
+                  >Сегодня (ТЗ)</a
+                >
+              </li>
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_7"
+                  onclick="bqclick ()"
+                  target="_blank"
+                  >Удалёнка</a
+                >
+              </li>
+              <li>
+                <a
+                  class="header__sub-link"
+                  id="button_8"
+                  onclick="bqclick ()"
+                  target="_blank"
+                  >Медиасистем</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </form>
+  </div>
+</header>
+
+      <main class="page">
+        <div class="main-content _container">
+          <article class="template">
+            <section class="template__number number-template">
+              <div class="number-template__draft">
+                <textarea class="number-template__draft-area" type="text"></textarea>
+              </div>
+              <div class="number-template__group-input">
+					<div class="number-template__type template-type-select">
+						<select
+							 id="customer_select"
+							 name="customer_select"
+							 onchange="templateTypeSelect(this)"
+						  >
+							 <option>universal</option>
+							 <option>sip-tele2</option>
+							 <option>sip-ukrtel</option>
+							 <option>sip-intertelecom</option>
+							 <option>trunk-tele2</option>
+							 <option>trunk</option>
+							 <option>universal-lite</option>
+						  </select>
+					</div>
+                <input
+                  class="template__input"
+                  type="number"
+                  maxlength="5"
+						pattern="[0-9]{1,5}"
+                  placeholder="Panel ID"
+                  id="template-company-id"
+                />
+                <input
+                  class="template__input"
+                  type="number"
+                  maxlength="15"
+                  placeholder="number"
+                  id="template-number"
+                />
+                <input
+                  class="template__input hide"
+                  type="text"
+                  placeholder="login"
+                  id="template-login"
+                />
+                <input
+                  class="template__input "
+                  type="text"
+                  placeholder="defaultuser"
+                  id="template-defaultuser"
+                />
+                <input
+                  class="template__input "
+                  type="text"
+                  placeholder="fromuser"
+                  id="template-fromuser"
+                />
+                <input
+                  class="template__input "
+                  type="text"
+                  placeholder="secret"
+                  id="template-secret"
+                />
+                <input
+                  class="template__input "
+                  type="text"
+                  placeholder="host"
+                  id="template-host"
+                />
+                <input
+                  class="template__input "
+                  type="text"
+                  placeholder="fromdomain"
+                  id="template-fromdomain"
+                />
+              </div>
+              <div class="number-template-ready">
+                <h3 class="number-template__title" >Просьба добавить для:</h3>
+                <p>
+                  <span
+                    >https://panel.binotel.com/?module=pbxNumbersEnhanced&amp;action=edit&amp;companyID=</span
+                  ><span class="template-panel-id"></span>
+                </p>
+					 <br>
+                <p class="template-ready__body template-ready-body">
+						<p>Номер <span class="template-ready-body__number">0XXXXXXXXX</span></p>
+						<br>
+                  <span
+                    >defaultuser =
+                    <span class="template-ready-body__defaultuser">binoman</span></span
+                  ><br />
+                  <span
+                    >fromuser =
+                    <span class="template-ready-body__fromuser">binoman</span></span
+                  ><br />
+                  <span
+                    >secret = <span class="template-ready-body__secret">secret</span></span
+                  ><br />
+                  <span>host = <span class="template-ready-body__host">host</span></span
+                  ><br />
+                  <span
+                    >fromdomain =
+                    <span class="template-ready-body__fromdomain">fromdomain</span></span
+                  ><br />
+						<span class="template-ready-body__outboundproxy-line hide"
+                    >outboundproxy  =
+                    <span class="template-ready-body__outboundproxy">195.5.0.164</span></span
+                  >
+                </p>
+                <br />
+                <p class="template-ready__reg template-ready-reg">
+                  register =&gt;
+                  <span class="template-ready-reg__login">login</span>:<span
+                    class="template-ready-reg__secret"
+                    >secret</span
+                  >@<span class="template-ready-reg__domain">domain</span>/<span
+                    class="template-ready-reg__number"
+                    >number</span
+                  >
+                </p>
+                <input class="btn" type="button" value="SAVE" id="getFromInput" />
+              </div>
+
+              <div class="number-template__result"></div>
+				  <div class="number-template__draft">
+					<textarea class="number-template__draft-area" type="text"></textarea>
+				 </div>
+            </section>
+          </article>
+        </div>
+      </main>
+      <footer class="footer">
+	<div class="footer__content _container">
+
+	</div>
+</footer>
+    </div>
+    <div class="popup popup_popup">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+<div class="popup popup_massagename-message">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+<div class="popup popup_video">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close popup__close_video"></div>
+			<div class="popup__video _video"></div>
+		</div>
+	</div>
+</div>
+ <!-- Swiper -->
+<!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+<script src="js/vendors.min.js"></script>
+<script src="js/app.min.js"></script>
+
+  </body>
+</html>
