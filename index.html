@@ -10,6 +10,26 @@
   <!-- <meta name="robots" content="noindex, nofollow"> -->
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+      .warn {
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #000;
+        text-align: center;
+        background-color: yellow;
+        border: 2px #ffe800 solid;
+        border-radius: 15px;
+      }
+      .warn__btn {
+        display: inline-block;
+        color: #000000;
+        padding: 1px;
+        border: 2px solid #000;
+        border-radius: 30%;
+        text-transform: uppercase;
+      }
+    </style>
 </head>
 
   <body>
@@ -130,7 +150,9 @@
         </ul>
       </nav>
     </form>
-    <h2 class="header__title" style="text-align:center; background-color: yellow; color:#000; border:2px #FFE800 solid; border-radius:15px">Просмотр закрытых задач работает по "КТО OLD"</h2>
+    <h2 class="warn">
+      <p class="warn__text">Hello world <span class="warn__btn">OK</span></p>
+    </h2>
   </div>
 </header>
 
@@ -295,5 +317,13 @@
 <script src="js/vendors.min.js"></script>
 <script src="js/app.min.js"></script>
 <footer><a href="https://userstyles.world/style/1882/binopanel-userstyle" style="display: none">Стили для panel здесь</a></footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+window.addEventListener('load', function () {
+	$('span.warn__btn').click(function (event) {
+	  $(this).parent().parent().hide();
+	});
+});
+</script>
   </body>
 </html>
